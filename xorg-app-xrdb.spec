@@ -1,5 +1,3 @@
-# $Rev: 3416 $, $Date: 2005-08-27 17:42:47 $
-#
 Summary:	xrdb application
 Summary(pl):	Aplikacja xrdb
 Name:		xorg-app-xrdb
@@ -15,10 +13,7 @@ BuildRequires:	automake
 BuildRequires:	xorg-lib-libXmu-devel
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	pkgconfig >= 0.19
-BuildRoot:	%{tmpdir}/xrdb-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 xrdb application.
@@ -26,10 +21,8 @@ xrdb application.
 %description -l pl
 Aplikacja xrdb.
 
-
 %prep
 %setup -q -n xrdb-%{version}
-
 
 %build
 %{__aclocal}
@@ -40,17 +33,14 @@ Aplikacja xrdb.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
