@@ -1,18 +1,19 @@
 Summary:	xrdb application
 Summary(pl):	Aplikacja xrdb
 Name:		xorg-app-xrdb
-Version:	0.99.1
+Version:	1.0.1
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xrdb-%{version}.tar.bz2
-# Source0-md5:	8363209572281379ee1b657012300fcf
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xrdb-%{version}.tar.bz2
+# Source0-md5:	9ed059ee45780d32c697d4acc6b07192
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
+# just xmuu
 BuildRequires:	xorg-lib-libXmu-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.1
+BuildRequires:	xorg-util-util-macros >= 0.99.2
 Requires:	cpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,14 +40,13 @@ Aplikacja xrdb.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	appmandir=%{_mandir}/man1
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc COPYING ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*.1x*
