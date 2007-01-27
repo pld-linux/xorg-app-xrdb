@@ -1,5 +1,5 @@
-Summary:	xrdb application
-Summary(pl):	Aplikacja xrdb
+Summary:	xrdb application - X server resource database utility
+Summary(pl):	Aplikacja xrdb - narzêdzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
 Version:	1.0.3
 Release:	1
@@ -18,10 +18,17 @@ Requires:	cpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xrdb application.
+xrdb is used to get or set the contents of the RESOURCE_MANAGER
+property on the root window of screen 0, or the SCREEN_RESOURCES
+property on the root window of any or all screens, or everything
+combined. You would normally run this program from your X startup
+file.
 
 %description -l pl
-Aplikacja xrdb.
+xrdb s³u¿y do odczytu lub ustawiania zawarto¶ci w³a¶ciwo¶ci
+RESOURCE_MANAGER g³ównego okna ekranu 0 lub w³a¶ciwo¶ci
+SCREEN_RESOURCES g³ównego okna dowolnego z ekranów, lub wszystkiego
+razem. Zwykle u¿ywa siê tego programu z poziomu skryptu startowego X.
 
 %prep
 %setup -q -n xrdb-%{version}
