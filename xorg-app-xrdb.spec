@@ -1,5 +1,5 @@
 Summary:	xrdb application - X server resource database utility
-Summary(pl.UTF-8):   Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
+Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
 Version:	1.0.3
 Release:	1
