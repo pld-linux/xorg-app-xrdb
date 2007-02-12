@@ -1,5 +1,5 @@
 Summary:	xrdb application - X server resource database utility
-Summary(pl):	Aplikacja xrdb - narzÍdzie do bazy danych zasobÛw serwera X
+Summary(pl.UTF-8):   Aplikacja xrdb - narzƒôdzie do bazy danych zasob√≥w serwera X
 Name:		xorg-app-xrdb
 Version:	1.0.3
 Release:	1
@@ -24,11 +24,11 @@ property on the root window of any or all screens, or everything
 combined. You would normally run this program from your X startup
 file.
 
-%description -l pl
-xrdb s≥uøy do odczytu lub ustawiania zawarto∂ci w≥a∂ciwo∂ci
-RESOURCE_MANAGER g≥Ûwnego okna ekranu 0 lub w≥a∂ciwo∂ci
-SCREEN_RESOURCES g≥Ûwnego okna dowolnego z ekranÛw, lub wszystkiego
-razem. Zwykle uøywa siÍ tego programu z poziomu skryptu startowego X.
+%description -l pl.UTF-8
+xrdb s≈Çu≈ºy do odczytu lub ustawiania zawarto≈õci w≈Ça≈õciwo≈õci
+RESOURCE_MANAGER g≈Ç√≥wnego okna ekranu 0 lub w≈Ça≈õciwo≈õci
+SCREEN_RESOURCES g≈Ç√≥wnego okna dowolnego z ekran√≥w, lub wszystkiego
+razem. Zwykle u≈ºywa siƒô tego programu z poziomu skryptu startowego X.
 
 %prep
 %setup -q -n xrdb-%{version}
