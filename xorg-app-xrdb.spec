@@ -1,3 +1,7 @@
+# TODO
+# - split cpp into separate package so we don't pull whole gcc suite to get cpp only
+#   cpp pkg was killed here somewhy:
+#   http://cvs.pld-linux.org/cgi-bin/cvsweb.cgi/packages/gcc/gcc.spec.diff?r1=1.241;r2=1.242;only_with_tag=MAIN;f=h
 Summary:	xrdb application - X server resource database utility
 Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
