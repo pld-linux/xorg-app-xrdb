@@ -2,22 +2,23 @@
 # - split cpp into separate package so we don't pull whole gcc suite to get cpp only
 #   cpp pkg was killed here somewhy (no explanation ....)
 #   http://cvs.pld-linux.org/cgi-bin/cvsweb.cgi/packages/gcc/gcc.spec.diff?r1=1.217.2.75;r2=1.217.2.76;f=h
+#   The explanation is that GNU cpp depends on language frontend (cc1 in case of traditional cpp mode).
 Summary:	xrdb application - X server resource database utility
 Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
-Version:	1.0.6
+Version:	1.0.7
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xrdb-%{version}.tar.bz2
-# Source0-md5:	8dd881cd5a7dcb6e456549817f0fb475
+# Source0-md5:	93f54f04e0b531b5fb77d3f051cbf22a
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 # just xmuu
 BuildRequires:	xorg-lib-libXmu-devel
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-util-util-macros >= 1.8
 Requires:	cpp >= 6:4.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
