@@ -1,25 +1,18 @@
-# TODO
-# - split cpp into separate package so we don't pull whole gcc suite to get cpp only
-#   cpp pkg was killed here somewhy (no explanation ....)
-#   http://cvs.pld-linux.org/cgi-bin/cvsweb.cgi/packages/gcc/gcc.spec.diff?r1=1.217.2.75;r2=1.217.2.76;f=h
-#   The explanation is that GNU cpp depends on language frontend (cc1 in case of traditional cpp mode).
 Summary:	xrdb application - X server resource database utility
 Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
 Version:	1.0.9
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xrdb-%{version}.tar.bz2
 # Source0-md5:	ed2e48cf33584455d74615ad4bbe4246
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.60
-BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 # just xmuu
 BuildRequires:	xorg-lib-libXmu-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
-Requires:	cpp >= 6:4.0.0
+Requires:	mcpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,12 +32,8 @@ razem. Zwykle używa się tego programu z poziomu skryptu startowego X.
 %setup -q -n xrdb-%{version}
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure \
-	--with-cpp=/usr/bin/cpp
+	--with-cpp=/usr/bin/mcpp
 
 %{__make}
 
@@ -61,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/xrdb
-%{_mandir}/man1/xrdb.1x*
+%{_mandir}/man1/xrdb.1*
