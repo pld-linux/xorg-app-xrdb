@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	mcpp	# gcc's cpp instead of mcpp
+#
 Summary:	xrdb application - X server resource database utility
 Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
@@ -13,7 +17,11 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXmu-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
 BuildRequires:	xorg-util-util-macros >= 1.8
+%if %{with mcpp}
 Requires:	mcpp
+%else
+Requires:	cpp
+%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +42,7 @@ razem. Zwykle używa się tego programu z poziomu skryptu startowego X.
 
 %build
 %configure \
-	--with-cpp=/usr/bin/mcpp
+	--with-cpp=/usr/bin/%{?with_mcpp:m}cpp
 
 %{__make}
 
