@@ -5,17 +5,17 @@
 Summary:	xrdb application - X server resource database utility
 Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
-Version:	1.1.0
-Release:	2
+Version:	1.1.1
+Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/individual/app/xrdb-%{version}.tar.bz2
-# Source0-md5:	b54c7e3e53b4f332d41ed435433fbda0
-URL:		http://xorg.freedesktop.org/
+Source0:	https://xorg.freedesktop.org/releases/individual/app/xrdb-%{version}.tar.bz2
+# Source0-md5:	96f9423eab4d0641c70848d665737d2e
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	pkgconfig >= 1:0.19
 # just xmuu
 BuildRequires:	xorg-lib-libXmu-devel
-BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.25
 BuildRequires:	xorg-util-util-macros >= 1.8
 %if %{with mcpp}
 Requires:	mcpp
@@ -42,7 +42,8 @@ razem. Zwykle używa się tego programu z poziomu skryptu startowego X.
 
 %build
 %configure \
-	--with-cpp=/usr/bin/%{?with_mcpp:m}cpp
+	--with-cpp=/usr/bin/%{?with_mcpp:m}cpp \
+	--disable-silent-rules
 
 %{__make}
 
