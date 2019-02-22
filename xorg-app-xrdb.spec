@@ -5,12 +5,12 @@
 Summary:	xrdb application - X server resource database utility
 Summary(pl.UTF-8):	Aplikacja xrdb - narzędzie do bazy danych zasobów serwera X
 Name:		xorg-app-xrdb
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	https://xorg.freedesktop.org/releases/individual/app/xrdb-%{version}.tar.bz2
-# Source0-md5:	96f9423eab4d0641c70848d665737d2e
+# Source0-md5:	34ae801ef994d192c70fcce2bdb2a1b2
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	pkgconfig >= 1:0.19
 # just xmuu
@@ -58,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog README.md
 %attr(755,root,root) %{_bindir}/xrdb
 %{_mandir}/man1/xrdb.1*
